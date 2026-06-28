@@ -148,7 +148,7 @@ function MessagesContent() {
 
     const ops = unreadMessages.map((m) =>
       db.tx.messages[m.id].update({ isRead: true })
-    );
+    ) as any[];
 
     // Also flip the conversation-level "unread" flag so the sidebar badge
     // clears immediately without waiting for a full refetch.
